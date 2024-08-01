@@ -3,7 +3,7 @@ const Bodyparser=require('body-parser')
 const app = express();
 const cors = require("cors")
 const { initDb } = require("./lib/config/db");
-const port = process.env.PORT || 3000
+const port = process.env.PORT
 app
   .use(cors())
   .use(Bodyparser.json())
