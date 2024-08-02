@@ -31,6 +31,7 @@ Pour utiliser notre mini api pour notre projet de `Success-field`,En developpant
 ## GET
 
 ["/publications"](#GettingPublication) Pour recuperer une publiaction ou toutes les publiactions
+["/publications/user?profil=???"](#GetUserPublication) Pour recuperer toute les publications d'un utilisateur
 
 ## PATCH
 
@@ -121,6 +122,19 @@ const url = url + "/GettingPublication";
 const id = 25; // Id de la publication que vous souhaiter recuperer
 const url = url + `/GettingPublication?${id}`;
 ```
+
+## ["#GetUserPublication"]:
+
+Ici, il est questiion de recuperer les publication d'un utilisateur a travers son profil... Onutilise pour cea le système de Facebook natif cet a dire que les publication de l'utilisateur souhaiter seront afficher y compris ceux des autres utilisateurs ayan le même profil
+
+- REQUEST :
+
+```js
+let profil='Profil de l utilisateur souhaiter'
+const url=url+"/Publications/user"+profil
+```
+
+
 
 # Publish_Social_Network :
 
