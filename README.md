@@ -8,13 +8,18 @@ Pour pouvoir utiliser cette api vous devez être au prealable un des developpeur
 
 Pour utiliser notre mini api pour notre projet de `Success-field`,En developpant la partie front de notre site,vous devez proceder par des requête http.Je me suis battus a ce que notre api respecte le CRUD. Sur ceux, la pluspart des verbes https/http sont accepter.
 
-1-- [POST](#post)
-2--[PUT](#put)
-3-- [GET](#get)
-4-- [DELETE](#delete)
-5-- [UPDATE](#update)
-6-- ["PATCH"](#patch)
+1-- [POST](#post)<br>
+2--[PUT](#put)<br>
+3-- [GET](#get)<br>
+4-- [DELETE](#delete)<br>
+5-- [UPDATE](#update)<br>
+6-- ["PATCH"](#patch)<br>
 
+```js
+// TOUTE VOS REQUETES DIFFERENTES DU GET,VOUS DEVEZ PRECISER EN HEADER VOTRE CLE API SOIT :
+const xhr // pour votre requete http
+xhr.setRequestHeader("X-API_KEY","VOTRE CLE API")
+```
 ### Enpoint
 
 ## POST
