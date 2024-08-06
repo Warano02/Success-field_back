@@ -20,6 +20,7 @@ Pour utiliser notre mini api pour notre projet de `Success-field`,En developpant
 const xhr // pour votre requete http
 xhr.setRequestHeader("X-API_KEY","VOTRE CLE API")
 ```
+
 ### Enpoint
 
 ## POST
@@ -28,6 +29,7 @@ xhr.setRequestHeader("X-API_KEY","VOTRE CLE API")
 ["/post/verify/tel/"](#telvaliditer) Pour tester la validiter d'un numéro de téléphone
 ["/post/verify/mail/"](#emailvaliditer) Pour verifier si une email est valide
 [/post/new_publication](#NewPublicationSocial) pour la creation d'une nouvelle publication
+["/post/messages/add"](#NewPrivateMessage) Pour l'envoie des messages privées de type texte
 
 ## PUT
 
@@ -45,6 +47,30 @@ xhr.setRequestHeader("X-API_KEY","VOTRE CLE API")
 
 ### EXEMPLE:
 
+# Add PrivateMessage:
+
+## ["NewPrivateMessage"]:
+
+- REQUEST :
+
+```JSON
+{
+	"pour":115,
+	"par":1271696484,
+	"contenue":"kdkd",
+	"type":"text"
+}
+```
+
+- RESPONSE: <br>
+
+```Json
+{
+	"error": false,
+	"msg": "Message envoyé avec succès !"
+}
+```
+NB: EN CAS D'ERREUR ,SE FIER AU MESSAGE ASSOCIER
 # Add comment_social_network:
 
 ## ["Add_new_comment"]:
@@ -135,11 +161,9 @@ Ici, il est questiion de recuperer les publication d'un utilisateur a travers so
 - REQUEST :
 
 ```js
-let profil='Profil de l utilisateur souhaiter'
-const url=url+"/Publications/user"+profil
+let profil = "Profil de l utilisateur souhaiter";
+const url = url + "/Publications/user" + profil;
 ```
-
-
 
 # Publish_Social_Network :
 
@@ -172,7 +196,7 @@ $ `Type`: A type of actual publication. Image,Videos or Typing
 
 $ `Name`: A name of a image or videos that published
 
-$ `Date`: A date of publication whith a format \_Moth-Day-Hours-Minutes $
+$ `Date`: A date of publication whith a format Moth-Day-Hours-Minutes
 
 <br>
 
@@ -188,7 +212,6 @@ $ `Date`: A date of publication whith a format \_Moth-Day-Hours-Minutes $
 - STATUS :<br>
   $Correct: 201
 $If Error :406
-
 
 # send_mail :
 
