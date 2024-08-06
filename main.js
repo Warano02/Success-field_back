@@ -7,6 +7,7 @@ const port = process.env.PORT
 app
   .use(cors())
   .use(Bodyparser.json())
+  .use(express.static('./lib/public'))
   .use(express.json())
   .use(express.urlencoded({ extended: false }))
   .use(express.Router())
