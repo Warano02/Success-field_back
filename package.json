@@ -10,6 +10,7 @@
   "author": "Warano carineteoi@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.3",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "complex.js": "^2.1.1",
@@ -17,6 +18,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "is-number": "^7.0.0",
+    "lodash": "^4.17.21",
     "mariadb": "^3.3.1",
     "mathjs": "^13.0.3",
     "multer": "^1.4.5-lts.1",

@@ -25,12 +25,11 @@ xhr.setRequestHeader("X-API_KEY","VOTRE CLE API")
 
 ## POST
 
-[/post/confirm/email/](#sendmail) Pour envoyer un code de confirmation a un utilisateur
-["/post/verify/tel/"](#telvaliditer) Pour tester la validiter d'un numéro de téléphone
-["/post/verify/mail/"](#emailvaliditer) Pour verifier si une email est valide
-[/post/new_publication](#NewPublicationSocial) pour la creation d'une nouvelle publication
-["/post/messages/add"](#NewPrivateMessage) Pour l'envoie des messages privées de type texte
-
+[/post/confirm/email/](#sendmail) Pour envoyer un code de confirmation a un utilisateur<br>
+["/post/verify/tel/"](#telvaliditer) Pour tester la validiter d'un numéro de téléphone<br>
+["/post/verify/mail/"](#emailvaliditer) Pour verifier si une email est valide<br>
+[/post/new_publication](#NewPublicationSocial) pour la creation d'une nouvelle publication<br>
+["/post/messages/add"](#NewPrivateMessage) Pour l'envoie des messages privées de type texte<br>
 ## PUT
 
 ["/add_new_comment"](#Add_new_comment) Pour ajouter un nouveau commentaire a une publication dans la base de donnée
@@ -42,8 +41,9 @@ xhr.setRequestHeader("X-API_KEY","VOTRE CLE API")
 
 ## PATCH
 
-["/likes_update/:id"](#/likes_update/:id) Pour liker une publication
-["/share_update/:id"](#share_update/:id) pour la mise a jours du nombre de like d(une publication)
+["/likes_update/:id"](#/likes_update/:id) Pour liker une publication<br>
+["/share_update/:id"](#share_update/:id) pour la mise a jours du nombre de like d(une publication)<br>
+["/randomquote"](#quote) Pour la recuperation d'une citation<br>
 
 ### EXEMPLE:
 
