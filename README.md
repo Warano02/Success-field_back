@@ -30,20 +30,22 @@ xhr.setRequestHeader("X-API_KEY","VOTRE CLE API")
 ["/post/verify/mail/"](#emailvaliditer) Pour verifier si une email est valide<br>
 [/post/new_publication](#NewPublicationSocial) pour la creation d'une nouvelle publication<br>
 ["/post/messages/add"](#NewPrivateMessage) Pour l'envoie des messages privées de type texte<br>
+
 ## PUT
 
 ["/add_new_comment"](#Add_new_comment) Pour ajouter un nouveau commentaire a une publication dans la base de donnée
 
 ## GET
 
-["/publications"](#GettingPublication) Pour recuperer une publiaction ou toutes les publiactions
-["/publications/user?profil=???"](#GetUserPublication) Pour recuperer toute les publications d'un utilisateur
+["/publications"](#GettingPublication) Pour recuperer une publiaction ou toutes les publiactions<br>
+["/publications/user?profil=???"](#GetUserPublication) Pour recuperer toute les publications d'un utilisateur<br>
+["/warano-qr-code"](#QrCode) Pour generer un code qr<br>
+["/randomquote"](#quote) Pour la recuperation d'une citation<br>
 
 ## PATCH
 
 ["/likes_update/:id"](#/likes_update/:id) Pour liker une publication<br>
 ["/share_update/:id"](#share_update/:id) pour la mise a jours du nombre de like d(une publication)<br>
-["/randomquote"](#quote) Pour la recuperation d'une citation<br>
 
 ### EXEMPLE:
 
@@ -70,7 +72,9 @@ xhr.setRequestHeader("X-API_KEY","VOTRE CLE API")
 	"msg": "Message envoyé avec succès !"
 }
 ```
+
 NB: EN CAS D'ERREUR ,SE FIER AU MESSAGE ASSOCIER
+
 # Add comment_social_network:
 
 ## ["Add_new_comment"]:
@@ -187,16 +191,16 @@ const url = url + "/Publications/user" + profil;
 }
 ```
 
-$EXPLICATIONS:$<br>
-$ `NAME`: Represent a name of who publish
+$ EXPLICATIONS:$<br>
+`NAME`: Represent a name of who publish
 
-$ `Profil`: It's a profil picture name of who publish
+`Profil`: It's a profil picture name of who publish
 
-$ `Type`: A type of actual publication. Image,Videos or Typing
+`Type`: A type of actual publication. Image,Videos or Typing
 
-$ `Name`: A name of a image or videos that published
+`Name`: A name of a image or videos that published
 
-$ `Date`: A date of publication whith a format Moth-Day-Hours-Minutes
+`Date`: A date of publication whith a format Moth-Day-Hours-Minutes
 
 <br>
 
@@ -210,8 +214,9 @@ $ `Date`: A date of publication whith a format Moth-Day-Hours-Minutes
 ```
 
 - STATUS :<br>
-  $Correct: 201
-$If Error :406
+
+* Correct: 201
+* If Error :406
 
 # send_mail :
 
@@ -276,3 +281,28 @@ $If Error :406
 ```
 
 ## ["/likes_update/:id"]: publication
+
+## QRCODE:
+
+# ["QrCode"]:
+
+Ici la reponse a la requête est un peu particulière car elle contient un fichier en base64 soit le code qr. Voyons ensemble comment sa marche
+
+```js
+const url = "https://exempleURL.com";
+const KEY = "Votre clé api que je vous ai donné";
+const XHR = new XMLHttpRequest();
+XHR.open("GET", `http://localhost:3000/get/warano-qr-code?url=${url}`, true);
+XHR.setRequestHeader("X-API_KEY");
+XHR.onloadend = () =>
+  (document.getElementById("img").src = JSON.parse(XHR.responseText).response);
+XHR.send();
+```
+
+Avec une tel requête, le requlta que vous allez obtenir :
+
+```json
+{
+  "response": "LE CODE QR EN BASE64"
+}
+```
