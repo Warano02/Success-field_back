@@ -30,6 +30,7 @@ xhr.setRequestHeader("X-API_KEY","VOTRE CLE API")
 ["/post/verify/mail/"](#emailvaliditer) Pour verifier si une email est valide<br>
 [/post/new_publication](#NewPublicationSocial) pour la creation d'une nouvelle publication<br>
 ["/post/messages/add"](#NewPrivateMessage) Pour l'envoie des messages privées de type texte<br>
+["/new_porfolio/contact"](#PorfolioContact) Pour envoyer un email lorsque je suis contacter depuis mon porfolio
 
 ## PUT
 
@@ -188,6 +189,31 @@ const url = url + "/Publications/user" + profil;
       "heure": "6-20-11-30",
       "mess": "Message qui as ete ajouter lors de la publication"
     }
+}
+```
+
+# Porfolio contact message :
+
+## ["PorfolioContact"]:
+
+- REQUEST:
+
+```JSON
+{
+	"nom":"THE NAME OF USER WHO CONTACT",
+	"email":"THEIR EMAIL",
+	"tel":"THEIR PHONE NUMBER",
+	"sujet":"The subject",
+	"messages":"THE MESSAGE"
+}
+```
+
+- RESPONSE :
+
+```JSON
+{
+  "error": false,
+ "msg": "Vous venez de me contacter avec succès. Je vous repond dans quelques minutes"
 }
 ```
 
